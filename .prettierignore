@@ -1,0 +1,5 @@
+dist
+mkdir .vscode
+cd .vscode
+touch extensions.json
+touch settings.json
