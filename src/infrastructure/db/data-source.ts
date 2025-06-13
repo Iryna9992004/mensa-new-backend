@@ -1,9 +1,9 @@
 import 'reflect-metadata';
 import { DataSource } from 'typeorm';
-import { User } from './entity/User';
 
-import { config } from '../shared/config/config';
-import { Migration1749811370024 } from './migrations/1749811370024-migration';
+import { config } from '../../shared/config/config';
+import { UserEntity } from '../../domain/user/user.entity';
+import { Migration1749815661974 } from '../migrations/1749815661974-migration';
 
 export const AppDataSource = new DataSource({
   type: config.db.type as never,
@@ -14,7 +14,7 @@ export const AppDataSource = new DataSource({
   database: config.db.database,
   synchronize: false,
   logging: false,
-  entities: [User],
-  migrations: [Migration1749811370024],
+  entities: [UserEntity],
+  migrations: [Migration1749815661974],
   subscribers: [],
 });
