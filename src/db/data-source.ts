@@ -1,9 +1,9 @@
 import 'reflect-metadata';
 import { DataSource } from 'typeorm';
-import { User } from './User';
+import { User } from './entity/User';
 
-import 'dotenv';
-import { config } from '../../shared/config/config';
+import { config } from '../shared/config/config';
+import { Migration1749811370024 } from './migrations/1749811370024-migration';
 
 export const AppDataSource = new DataSource({
   type: config.db.type as never,
@@ -15,6 +15,6 @@ export const AppDataSource = new DataSource({
   synchronize: false,
   logging: false,
   entities: [User],
-  migrations: [],
+  migrations: [Migration1749811370024],
   subscribers: [],
 });
